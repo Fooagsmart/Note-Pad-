@@ -20,5 +20,12 @@ createBtn.addEventListener("click", ()=>{
             e.target.parentElement.remove();
             updateStorage();
         }
-       
+        else if(e.target.tagName === "p"){
+            notes = document.querySelectorAll(".input-box");
+            notes.forEach(nt => {
+                nt.onkeyup = function(){
+                    updateStorage();
+                }
+            })
+        }
     })
